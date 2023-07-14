@@ -24,6 +24,7 @@
         <module>onboard-cinema-book-show-cinema-mgmt-service</module>
         <module>onboard-cinema-book-show-business-service</module>
         <module>common-module</module>
+        <module>infrastructure</module>
     </modules>
 
     <properties>

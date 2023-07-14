@@ -45,6 +45,10 @@
             <groupId>com.onboard.cinema.book.show</groupId>
             <artifactId>common-module</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
