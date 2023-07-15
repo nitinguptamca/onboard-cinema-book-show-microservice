@@ -71,7 +71,7 @@ CREATE TABLE cinema.cinemaHallSeat
     seatNumber integer not null,
     Type seat_type not null,
     TotalSeats integer,
-    cinemaId UUID NOT_NULL;
+    cinemaHallId UUID NOT_NULL;
     CONSTRAINT cinemaHall_pk PRIMARY KEY (id)
 );
 
@@ -114,6 +114,54 @@ CREATE TABLE cinema.Payment
 -------------
 --implement foreign key
 
+ALTER TABLE cinema.show
+    ADD CONSTRAINT "FK_cinemaHallId" FOREIGN KEY (cinemaHallId)
+    REFERENCES cinema.cinemaHall (id) ,
+    ADD CONSTRAINT "FK_movieId" FOREIGN KEY (movieId)
+    REFERENCES cinema.movie(id)
+    MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE CASCADED;
+
+ALTER TABLE cinema.cinemaOwner
+    ADD CONSTRAINT "FK_cinemaId" FOREIGN KEY (cinemaId)
+    REFERENCES cinema.cinema(id)
+    MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE CASCADED;
+
+ALTER TABLE cinema.cinemaHall
+    ADD CONSTRAINT "FK_cinemaId" FOREIGN KEY (cinemaId)
+    REFERENCES cinema.cinema(id)
+    MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE CASCADED;
+
+ALTER TABLE cinema.cinemaHallSeat
+    ADD CONSTRAINT "FK_cinemaHall" FOREIGN KEY (cinemaHallId)
+    REFERENCES cinema.cinemaHall(id)
+    MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE CASCADED;
+
+ALTER TABLE cinema.show_seat
+    ADD CONSTRAINT "FK_cinemaHallSeat" FOREIGN KEY (showSeatId)
+    REFERENCES cinema.cinemaHallSeat(id),
+    ADD CONSTRAINT "FK_showId" FOREIGN KEY (showId)
+    REFERENCES cinema.show(id),
+    ADD CONSTRAINT "FK_booking" FOREIGN KEY (bookingId)
+    REFERENCES cinema.Booking(id),
+    MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE CASCADED;
+
+
+ALTER TABLE cinema.Booking
+    ADD CONSTRAINT "FK_showId" FOREIGN KEY (showId)
+    REFERENCES cinema.show(id)
+    MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE CASCADED;
 
 
 
