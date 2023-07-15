@@ -35,6 +35,7 @@ public class CinemaOwner {
     private String ownerEmail;
     private String name;
     private Long mobile;
+    @Column(name = "pin_code")
     private Long pinCode;
     private String address;
     @Column(name="cinema_Id")
