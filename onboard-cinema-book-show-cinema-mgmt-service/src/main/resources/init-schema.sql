@@ -5,9 +5,9 @@ CREATE SCHEMA cinema;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 --DROP TABLE IF EXISTS customer.customers CASCADE;
 
-CREATE TYPE approval_status AS ENUM ('APPROVED', 'REJECTED');
-CREATE TYPE payment_method AS ENUM ('CREDIT_CARD', 'DEBIT_CARD' ,'UPI','NET_BANKING','PAYPAL');
-CREATE TYPE seat_type AS ENUM ('PREMIUM GLIDER' ,'FULL ROCKER' , 'SWING BACK/GLIDER' );
+CREATE TYPE ApprovalStatus AS ENUM ('PENDING', 'PAID', 'APPROVED', 'CANCELLING', 'CANCELLED','REJECTED');
+CREATE TYPE PaymentMethod AS ENUM ('CREDIT_CARD', 'DEBIT_CARD' ,'UPI','NET_BANKING','PAYPAL');
+CREATE TYPE SeatType AS ENUM ('PREMIUM_GLIDER' ,'FULL_ROCKER' , 'SWING_BACK' );
 
 CREATE TABLE cinema.movie
 (
@@ -35,24 +35,25 @@ CREATE TABLE cinema.show
 CREATE TABLE cinema.cinemaOwner
 (
     id uuid NOT NULL,
-    owner_email character varying COLLATE pg_catalog."default" NOT NULL,
+    ownerEmail character varying COLLATE pg_catalog."default" NOT NULL,
     name character varying COLLATE pg_catalog."default" NOT NULL,
     mobile integer NOT NULL,
-    pin_code integer NOT NULL,
-    onboard_Date Date NOT NULL,
+    pinCode integer NOT NULL,
+    onboardDate Date NOT NULL,
     address character varying COLLATE pg_catalog."default" NOT NULL,
-    cinemaId not null,
+    cinemaId uuid not null,
     CONSTRAINT cinemaOwner_pk PRIMARY KEY (id)
 );
+
 
 CREATE TABLE cinema.cinema
 (
     id uuid NOT NULL,
     name character varying COLLATE pg_catalog."default" NOT NULL,
-    contact_number integer NOT NULL,
-    pin_code integer NOT NULL,
+    contactNumber integer NOT NULL,
+    pinCode integer NOT NULL,
     address character varying COLLATE pg_catalog."default" NOT NULL,
-    totalCinemaHall integer;
+    totalCinemaHall integer,
     CONSTRAINT cinema_pk PRIMARY KEY (id)
 );
 
@@ -61,7 +62,7 @@ CREATE TABLE cinema.cinemaHall
     id uuid NOT NULL,
     name character varying COLLATE pg_catalog."default" NOT NULL,
     TotalSeats integer,
-    cinemaId UUID NOT_NULL;
+    cinemaId UUID NOT NULL,
     CONSTRAINT cinemaHall_pk PRIMARY KEY (id)
 );
 
@@ -69,22 +70,22 @@ CREATE TABLE cinema.cinemaHallSeat
 (
     id integer NOT NULL,
     seatNumber integer not null,
-    Type seat_type not null,
-    TotalSeats integer,
-    cinemaHallId UUID NOT_NULL;
-    CONSTRAINT cinemaHall_pk PRIMARY KEY (id)
+    Type seatType not null,
+    totalSeats integer,
+    cinemaHallId UUID NOT NULL,
+    CONSTRAINT cinemaHallSeat_pk PRIMARY KEY (id)
 );
 
 
-CREATE TABLE cinema.show_seat
+CREATE TABLE cinema.showSeat
 (
     id uuid NOT NULL,
-    status approval_status not null,
-    price number,
+    seatType SeatType not null,
+    price numeric(10,2),
     showSeatId integer not null,
     showId uuid not null,
     bookingId uuid not null,
-    CONSTRAINT show_seatßß_pk PRIMARY KEY (id)
+    CONSTRAINT show_seat_pk PRIMARY KEY (id)
 );
 
 
@@ -97,18 +98,18 @@ CREATE TABLE cinema.Booking
     status approval_status NOT NULL,
     UserId uuid not null,
     showId uuid not null,
-    CONSTRAINT cinemaHall_pk PRIMARY KEY (id)
+    CONSTRAINT Booking_pk PRIMARY KEY (id)
 );
 
 CREATE TABLE cinema.Payment
 (
     id uuid NOT NULL,
-    amount number NOT NULL,
+    amount NUMERIC(10,2) NOT NULL,
     transactionTime TIMESTAMP not null,
     DiscountCouponId uuid not null,
     transactionId uuid not null,
-    PaymentMethod  payment_method NOT NULL,
-    CONSTRAINT cinemaHall_pk PRIMARY KEY (id)
+    paymentMethod  PaymentMethod NOT NULL,
+    CONSTRAINT Payment_pk PRIMARY KEY (id)
 );
 
 -------------
@@ -121,39 +122,39 @@ ALTER TABLE cinema.show
     REFERENCES cinema.movie(id)
     MATCH SIMPLE
     ON UPDATE NO ACTION
-    ON DELETE CASCADED;
+    ON DELETE CASCADE;
 
 ALTER TABLE cinema.cinemaOwner
     ADD CONSTRAINT "FK_cinemaId" FOREIGN KEY (cinemaId)
     REFERENCES cinema.cinema(id)
     MATCH SIMPLE
     ON UPDATE NO ACTION
-    ON DELETE CASCADED;
+    ON DELETE CASCADE;
 
 ALTER TABLE cinema.cinemaHall
     ADD CONSTRAINT "FK_cinemaId" FOREIGN KEY (cinemaId)
     REFERENCES cinema.cinema(id)
     MATCH SIMPLE
     ON UPDATE NO ACTION
-    ON DELETE CASCADED;
+    ON DELETE CASCADE;
 
 ALTER TABLE cinema.cinemaHallSeat
     ADD CONSTRAINT "FK_cinemaHall" FOREIGN KEY (cinemaHallId)
     REFERENCES cinema.cinemaHall(id)
     MATCH SIMPLE
     ON UPDATE NO ACTION
-    ON DELETE CASCADED;
+    ON DELETE CASCADE;
 
-ALTER TABLE cinema.show_seat
+ALTER TABLE cinema.showSeat
     ADD CONSTRAINT "FK_cinemaHallSeat" FOREIGN KEY (showSeatId)
     REFERENCES cinema.cinemaHallSeat(id),
     ADD CONSTRAINT "FK_showId" FOREIGN KEY (showId)
     REFERENCES cinema.show(id),
     ADD CONSTRAINT "FK_booking" FOREIGN KEY (bookingId)
-    REFERENCES cinema.Booking(id),
+    REFERENCES cinema.Booking(id)
     MATCH SIMPLE
     ON UPDATE NO ACTION
-    ON DELETE CASCADED;
+    ON DELETE CASCADE;
 
 
 ALTER TABLE cinema.Booking
@@ -161,7 +162,7 @@ ALTER TABLE cinema.Booking
     REFERENCES cinema.show(id)
     MATCH SIMPLE
     ON UPDATE NO ACTION
-    ON DELETE CASCADED;
+    ON DELETE CASCADE;
 
 
 

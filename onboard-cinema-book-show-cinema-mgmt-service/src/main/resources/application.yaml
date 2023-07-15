@@ -1,4 +1,4 @@
-server.port: 6666
+server.port: 7779
 eureka:
   instance:
     # enable to register multiple app instances with a random server port
@@ -22,8 +22,8 @@ spring:
     database: POSTGRESQL
     open-in-view: true
     show-sql: true
-    #hibernate:
-     # ddl-auto: create
+    hibernate:
+     ddl-auto: create
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=cinema&binaryTransfer=true&reWriteBatchedInserts=true
     username: postgres
