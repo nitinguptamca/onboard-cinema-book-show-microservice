@@ -2,10 +2,11 @@ server.port: 8888
 spring:
   cloud:
     config:
+      activate:
+        on-profile: default
       server:
         git:
           uri: https://github.com/nitinguptamca/onboard-cinema-book-show-config
-          default-label: main
         # Use the File System Backend to avoid git pulling. Enable "native" profile in the Config Server.
         native:
           searchLocations: file:///${GIT_REPO}

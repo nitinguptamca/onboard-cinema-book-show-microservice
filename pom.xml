@@ -25,6 +25,7 @@
         <module>onboard-cinema-book-show-business-service</module>
         <module>common-module</module>
         <module>infrastructure</module>
+        <module>onboard-cinema-book-show-ticket-booking-service</module>
     </modules>
 
     <properties>
@@ -36,7 +37,7 @@
         <spring-boot.version>3.1.1</spring-boot.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <lombok.version>1.18.24</lombok.version>
-        <postgresql.version>42.5.2</postgresql.version>
+        <postgresql.version>42.2.12</postgresql.version>
         <r2dbc-postgresql.version>0.8.13.RELEASE</r2dbc-postgresql.version>
     </properties>
     <dependencyManagement>
@@ -125,7 +126,7 @@
             <dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>postgresql</artifactId>
-                <version>${postgresql.version}</version>
+               <version>${postgresql.version}</version>
                 <scope>runtime</scope>
             </dependency>
             <dependency>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <property name="DEV_HOME" value="/Users/nitingupta2/log/admin-server"/>
+    <property name="DEV_HOME" value="/Users/nitingupta2/log/"/>
     <property name="APP_NAME" value="admin-server"/>
     <!-- Required for Loglevel managment into the Spring  Admin Server-->
     <include resource="logback-common.xml"/>
