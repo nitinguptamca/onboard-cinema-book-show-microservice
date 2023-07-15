@@ -111,6 +111,10 @@ CREATE TABLE cinema.Payment
     CONSTRAINT cinemaHall_pk PRIMARY KEY (id)
 );
 
+-------------
+--implement foreign key
+
+
 
 
 
