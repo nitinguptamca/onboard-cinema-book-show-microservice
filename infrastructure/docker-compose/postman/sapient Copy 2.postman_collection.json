@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "652630a1-73ed-48ea-8443-24199460c544",
+		"name": "sapient Copy 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2562565"
+	},
+	"item": [
+		{
+			"name": "create cinema",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\"name\": \"inox\",\n\"contactNumber\" :9865565432,\n\"pinCode\":411028,\n\"address\" : \"amanora park town hadapsar pune\",\n\"totalCinemaHall\": 20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7779/cinema",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7779",
+					"path": [
+						"cinema"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n    \"title\":\"shole\",\n    \"description\": \"thrial movie\",\n    \"duration\": 15000,\n    \"publishLanguage\":\"Hindi\",\n    \"country\":\"India\",\n    \"releaseDate\":\"12/10/1979\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cinemaHall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"vaibhav cinema\",\n    \"totalSeats\":140,\n    \"cinemaId\":\"7d00115e-33b4-4758-a2f5-01394853f5ac\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7779/cinema/hall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7779",
+					"path": [
+						"cinema",
+						"hall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cinemaOwner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ownerEmail\":\"nitin@gmail.com\",\n    \"name\":\"nitinsssss\",\n    \"mobile\": 9876500000,\n    \"pinCode\": 987654,\n    \"address\": \"nitiksdfs faslkfjlaskfjlsajf asl\",\n    \"cinemaId\":\"ecb83dae-f57d-4e2a-827d-eb5fd6a8f5a7\",\n    \"onboardDate\":\"12/10/1998\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7779/cinemaOwner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7779",
+					"path": [
+						"cinemaOwner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "show",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7779/show",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7779",
+					"path": [
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7777/customers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"email\":\"nitin1231@gmail.com\",\n     \"name\": \"NKG\",\n    \"mobile\":9324560977,\n    \"pinCode\": 411028,\n    \"visitingDate\":\"10/12/2023\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7777/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7779/cinemaOwner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ownerEmail\":\"nitin@gmail.com\",\n    \"name\":\"nitinsssss\",\n    \"mobile\": 9876500000,\n    \"pinCode\": 987654,\n    \"address\": \"nitiksdfs faslkfjlaskfjlsajf asl\",\n    \"cinemaId\":\"ecb83dae-f57d-4e2a-827d-eb5fd6a8f5a7\",\n    \"onboardDate\":\"12/10/1998\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7779/cinemaOwner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7779",
+					"path": [
+						"cinemaOwner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7779/show/hall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"showSeatId\":123,\n    \"seatType\":\"PREMIUM_GLIDER\",\n    \"price\": 179.99,\n    \"showid\":\"7d00115e-33b4-4758-a2f5-01394853f5ac\",\n    \"bookingId\":\"7d00115e-33b4-4758-a9f5-01394853f5ac\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7779/show/hall",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7779",
+					"path": [
+						"show",
+						"hall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking booking",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"numberOfSeats\":3,\n    \"status\": \"APPROVED\",\n    \"bookingTime\":\"2012-04-21T18:28:43-05:00\",\n    \"showId\": \"7d00115e-33b4-4758-a2f5-01394853f5ac\",\n    \"userId\":\"7d00115e-33b4-4758-a9f5-01394853f5ac\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7779/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7779",
+					"path": [
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7779/payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 180.01,\n    \"DiscountCouponId\": \"0a9a68a5-2da2-48c8-9052-02c2fb9993bf\",\n    \"transactionId\": \"0a9a68a5-2da2-48c8-1234-02c2fb9993bf\",\n    \"transactionTime\": \"2012-04-21T18:28:43-05:00\",\n    \"paymentMethod\":\"UPI\",\n    \"country\": \"India\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7779/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7779",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
