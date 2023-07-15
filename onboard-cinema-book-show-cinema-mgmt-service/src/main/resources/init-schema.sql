@@ -50,7 +50,7 @@ CREATE TABLE cinema.cinema
 (
     id uuid NOT NULL,
     name character varying COLLATE pg_catalog."default" NOT NULL,
-    contactNumber integer NOT NULL,
+    contact_number integer NOT NULL,
     pinCode integer NOT NULL,
     address character varying COLLATE pg_catalog."default" NOT NULL,
     totalCinemaHall integer,

@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "cinema" ,name ="showSeat")
+@Table(schema = "cinema" ,name ="show_Seat")
 @Entity
 @Builder
 public class ShowSeat {
@@ -28,10 +28,14 @@ public class ShowSeat {
     @GeneratedValue
     @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
+    @Column(name = "show_Seat_Id")
     private Integer showSeatId;
     @Enumerated(EnumType.STRING)
+    @Column(name = "seat_Type")
     private SeatType seatType ;
     private double price;
+    @Column(name = "show_Id")
     private UUID showId;
+    @Column(name = "booking_Id")
     private UUID bookingId;
 }

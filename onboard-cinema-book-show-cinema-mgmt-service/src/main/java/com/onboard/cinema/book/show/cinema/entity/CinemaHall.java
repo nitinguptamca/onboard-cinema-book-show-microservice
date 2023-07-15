@@ -16,7 +16,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "cinema" ,name ="cinemaHall")
+@Table(schema = "cinema" ,name ="cinema_hall")
 @Entity
 @Builder
 public class CinemaHall {
@@ -26,6 +26,8 @@ public class CinemaHall {
     @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
     private String name;
-    private Integer TotalSeats;
+    @Column(name="total_seats")
+    private Integer totalSeats;
+    @Column(name="cinema_id")
     private UUID cinemaId;
 }

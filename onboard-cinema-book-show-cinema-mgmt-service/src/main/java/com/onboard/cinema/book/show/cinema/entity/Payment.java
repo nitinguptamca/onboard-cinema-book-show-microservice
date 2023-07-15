@@ -30,10 +30,14 @@ public class Payment {
     @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
     private double amount;
+    @Column(name = "Discount_Coupon_Id")
     private UUID DiscountCouponId;
+    @Column(name = "transaction_Id")
     private UUID transactionId;
+    @Column(name = "transaction_Time")
     private Timestamp transactionTime;
     @Enumerated(EnumType.STRING)
+    @Column(name = "payment_Method")
     private PaymentMethod paymentMethod;
     private String country;
 }

@@ -19,7 +19,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "cinema" ,name ="cinemaHallSeat")
+@Table(schema = "cinema" ,name ="cinema_Hall_Seat")
 @Entity
 @Builder
 public class CinemaHallSeat {
@@ -28,9 +28,13 @@ public class CinemaHallSeat {
     @GeneratedValue
     @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
+    @Column(name="seat_number")
     private Integer seatNumber ;
     @Enumerated(EnumType.STRING)
+    @Column(name="seat_type")
     private SeatType seatType;
+    @Column(name="total_seats")
     private Integer totalSeats;
+    @Column(name="cinema_hall_id")
     private UUID cinemaHallId;
 }

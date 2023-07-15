@@ -32,13 +32,18 @@ public class Show {
     @GeneratedValue
     @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
+    @Column(name = "cinema_Hall_Id")
     private UUID cinemaHallId;
+    @Column(name = "movie_Id")
     private UUID movieId;
+    @Column(name = "start_Time")
     private Timestamp startTime;
+    @Column(name = "end_Time")
     private Timestamp endTime;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     @NotNull
+    @Column(name = "show_Date")
     private LocalDate showDate;
 }

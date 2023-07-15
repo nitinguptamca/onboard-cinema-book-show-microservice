@@ -22,7 +22,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(schema = "cinema" ,name ="cinemaOwner")
+@Table(schema = "cinema" ,name ="cinema_Owner")
 @Entity
 @Builder
 public class CinemaOwner {
@@ -31,15 +31,18 @@ public class CinemaOwner {
     @GeneratedValue
     @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
+    @Column(name="owner_Email")
     private String ownerEmail;
     private String name;
     private Long mobile;
     private Long pinCode;
     private String address;
+    @Column(name="cinema_Id")
     private UUID cinemaId;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     @NotNull
+    @Column(name="onboard_Date")
     private LocalDate onboardDate;
 }

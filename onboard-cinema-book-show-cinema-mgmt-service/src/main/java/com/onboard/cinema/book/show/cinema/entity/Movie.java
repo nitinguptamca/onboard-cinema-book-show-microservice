@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotNull;
-import java.sql.Timestamp;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
@@ -34,12 +34,15 @@ public class Movie {
     private UUID id;
     private String title;
     private String description;
-    private Timestamp duration;
+
+    private Duration duration;
+    @Column(name = "publish_Language")
     private String publishLanguage;
     private String country;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     @NotNull
+    @Column(name = "release_Date")
     private LocalDate releaseDate;
 }

@@ -29,10 +29,14 @@ public class Booking {
     @GeneratedValue
     @Column( columnDefinition = "uuid", updatable = false )
     private UUID id;
+    @Column(name="number_of_seats")
     private Integer numberOfSeats;
     @Enumerated(EnumType.STRING)
     private ApprovalStatus status;
+    @Column(name = "booking_time")
     private Timestamp bookingTime;
+    @Column(name = "show_id")
     private UUID showId;
-    private UUID UserId;
+    @Column(name = "user_id")
+    private UUID userId;
 }
