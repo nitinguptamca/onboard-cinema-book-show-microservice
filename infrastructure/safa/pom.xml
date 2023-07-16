@@ -10,6 +10,11 @@
     </parent>
 
     <artifactId>safa</artifactId>
-
+    <dependencies>
+        <dependency>
+            <groupId>com.onboard.cinema.book.show</groupId>
+            <artifactId>common-module</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

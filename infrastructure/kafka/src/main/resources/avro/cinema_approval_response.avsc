@@ -1,0 +1,111 @@
+{
+  "namespace": "com.onboard.cinema.book.show.kafka.booking.avro.model",
+  "type": "record",
+  "name": "CinemaApprovalResponseAvroModel",
+  "fields": [
+    {
+      "name": "id",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "sagaId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "paymentId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "customerId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "bookingId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "movieId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "showId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "cinemaId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "cinemaHallId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "cinemaHallSeatId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "showSeatId",
+      "type": {
+        "type": "int",
+        "logicalType": "decimal"
+      }
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "bookApprovalStatus",
+      "type": {
+        "type": "enum",
+        "name": "BookApprovalStatus",
+        "symbols": [
+          "APPROVED",
+          "REJECTED"
+        ]
+      }
+    },
+    {
+      "name": "failureMessages",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  ]
+}

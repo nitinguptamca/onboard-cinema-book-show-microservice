@@ -9,6 +9,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -34,7 +35,7 @@ public class Movie {
     private UUID id;
     private String title;
     private String description;
-
+    private BigDecimal price;
     private Duration duration;
     @Column(name = "publish_Language")
     private String publishLanguage;

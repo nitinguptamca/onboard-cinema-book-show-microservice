@@ -27,9 +27,9 @@ public class Booking {
 
     @Id
     @GeneratedValue
-    @Column( columnDefinition = "uuid", updatable = false )
+    @Column(columnDefinition = "uuid", updatable = false)
     private UUID id;
-    @Column(name="number_of_seats")
+    @Column(name = "number_of_seats")
     private Integer numberOfSeats;
     @Enumerated(EnumType.STRING)
     private ApprovalStatus status;
@@ -37,6 +37,6 @@ public class Booking {
     private Timestamp bookingTime;
     @Column(name = "show_id")
     private UUID showId;
-    @Column(name = "user_id")
-    private UUID userId;
+    @Column(name = "customer_id")
+    private UUID customerId;
 }
