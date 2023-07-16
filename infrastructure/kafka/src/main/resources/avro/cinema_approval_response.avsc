@@ -67,20 +67,6 @@
       }
     },
     {
-      "name": "cinemaHallSeatId",
-      "type": {
-        "type": "string",
-        "logicalType": "uuid"
-      }
-    },
-    {
-      "name": "showSeatId",
-      "type": {
-        "type": "int",
-        "logicalType": "decimal"
-      }
-    },
-    {
       "name": "createdAt",
       "type": {
         "type": "long",
@@ -96,6 +82,15 @@
           "APPROVED",
           "REJECTED"
         ]
+      }
+    },
+    {
+      "name": "seats",
+      "type": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
       }
     },
     {

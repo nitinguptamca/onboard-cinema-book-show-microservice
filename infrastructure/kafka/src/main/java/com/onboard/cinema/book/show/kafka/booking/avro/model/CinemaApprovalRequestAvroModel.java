@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -2598153352914654383L;
+  private static final long serialVersionUID = 2911124984488445214L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CinemaApprovalRequestAvroModel\",\"namespace\":\"com.onboard.cinema.book.show.kafka.booking.avro.model\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"sagaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"paymentId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"bookingId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"movieId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"showId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaHallId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaHallSeatId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"showSeatId\",\"type\":{\"type\":\"int\",\"logicalType\":\"decimal\"}},{\"name\":\"cinemaBookingStatus\",\"type\":{\"type\":\"enum\",\"name\":\"CinemaBookingStatus\",\"symbols\":[\"PAID\"]}},{\"name\":\"Seats\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Seat\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"},\"logicalType\":\"uuid\"},{\"name\":\"showSeatId\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"quantity\",\"type\":\"int\"}]}}},{\"name\":\"price\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":2}},{\"name\":\"createdAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CinemaApprovalRequestAvroModel\",\"namespace\":\"com.onboard.cinema.book.show.kafka.booking.avro.model\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"sagaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"paymentId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"bookingId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"movieId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"showId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaHallId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaBookingStatus\",\"type\":{\"type\":\"enum\",\"name\":\"CinemaBookingStatus\",\"symbols\":[\"PAID\"]}},{\"name\":\"quantity\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":2,\"scale\":0}},{\"name\":\"price\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":2}},{\"name\":\"createdAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -86,10 +86,8 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
   private java.lang.String showId;
   private java.lang.String cinemaId;
   private java.lang.String cinemaHallId;
-  private java.lang.String cinemaHallSeatId;
-  private int showSeatId;
   private com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus cinemaBookingStatus;
-  private java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat> Seats;
+  private java.math.BigDecimal quantity;
   private java.math.BigDecimal price;
   private java.time.Instant createdAt;
 
@@ -111,14 +109,12 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
    * @param showId The new value for showId
    * @param cinemaId The new value for cinemaId
    * @param cinemaHallId The new value for cinemaHallId
-   * @param cinemaHallSeatId The new value for cinemaHallSeatId
-   * @param showSeatId The new value for showSeatId
    * @param cinemaBookingStatus The new value for cinemaBookingStatus
-   * @param Seats The new value for Seats
+   * @param quantity The new value for quantity
    * @param price The new value for price
    * @param createdAt The new value for createdAt
    */
-  public CinemaApprovalRequestAvroModel(java.lang.String id, java.lang.String sagaId, java.lang.String paymentId, java.lang.String customerId, java.lang.String bookingId, java.lang.String movieId, java.lang.String showId, java.lang.String cinemaId, java.lang.String cinemaHallId, java.lang.String cinemaHallSeatId, java.lang.Integer showSeatId, com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus cinemaBookingStatus, java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat> Seats, java.math.BigDecimal price, java.time.Instant createdAt) {
+  public CinemaApprovalRequestAvroModel(java.lang.String id, java.lang.String sagaId, java.lang.String paymentId, java.lang.String customerId, java.lang.String bookingId, java.lang.String movieId, java.lang.String showId, java.lang.String cinemaId, java.lang.String cinemaHallId, com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus cinemaBookingStatus, java.math.BigDecimal quantity, java.math.BigDecimal price, java.time.Instant createdAt) {
     this.id = id;
     this.sagaId = sagaId;
     this.paymentId = paymentId;
@@ -128,10 +124,8 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
     this.showId = showId;
     this.cinemaId = cinemaId;
     this.cinemaHallId = cinemaHallId;
-    this.cinemaHallSeatId = cinemaHallSeatId;
-    this.showSeatId = showSeatId;
     this.cinemaBookingStatus = cinemaBookingStatus;
-    this.Seats = Seats;
+    this.quantity = quantity;
     this.price = price;
     this.createdAt = createdAt.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
   }
@@ -150,12 +144,10 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
     case 6: return showId;
     case 7: return cinemaId;
     case 8: return cinemaHallId;
-    case 9: return cinemaHallSeatId;
-    case 10: return showSeatId;
-    case 11: return cinemaBookingStatus;
-    case 12: return Seats;
-    case 13: return price;
-    case 14: return createdAt;
+    case 9: return cinemaBookingStatus;
+    case 10: return quantity;
+    case 11: return price;
+    case 12: return createdAt;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -172,9 +164,7 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       null,
       null,
       null,
-      null,
-      null,
-      null,
+      new org.apache.avro.Conversions.DecimalConversion(),
       new org.apache.avro.Conversions.DecimalConversion(),
       new org.apache.avro.data.TimeConversions.TimestampMillisConversion(),
       null
@@ -198,12 +188,10 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
     case 6: showId = value$ != null ? value$.toString() : null; break;
     case 7: cinemaId = value$ != null ? value$.toString() : null; break;
     case 8: cinemaHallId = value$ != null ? value$.toString() : null; break;
-    case 9: cinemaHallSeatId = value$ != null ? value$.toString() : null; break;
-    case 10: showSeatId = (java.lang.Integer)value$; break;
-    case 11: cinemaBookingStatus = (com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus)value$; break;
-    case 12: Seats = (java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat>)value$; break;
-    case 13: price = (java.math.BigDecimal)value$; break;
-    case 14: createdAt = (java.time.Instant)value$; break;
+    case 9: cinemaBookingStatus = (com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus)value$; break;
+    case 10: quantity = (java.math.BigDecimal)value$; break;
+    case 11: price = (java.math.BigDecimal)value$; break;
+    case 12: createdAt = (java.time.Instant)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -362,40 +350,6 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
   }
 
   /**
-   * Gets the value of the 'cinemaHallSeatId' field.
-   * @return The value of the 'cinemaHallSeatId' field.
-   */
-  public java.lang.String getCinemaHallSeatId() {
-    return cinemaHallSeatId;
-  }
-
-
-  /**
-   * Sets the value of the 'cinemaHallSeatId' field.
-   * @param value the value to set.
-   */
-  public void setCinemaHallSeatId(java.lang.String value) {
-    this.cinemaHallSeatId = value;
-  }
-
-  /**
-   * Gets the value of the 'showSeatId' field.
-   * @return The value of the 'showSeatId' field.
-   */
-  public int getShowSeatId() {
-    return showSeatId;
-  }
-
-
-  /**
-   * Sets the value of the 'showSeatId' field.
-   * @param value the value to set.
-   */
-  public void setShowSeatId(int value) {
-    this.showSeatId = value;
-  }
-
-  /**
    * Gets the value of the 'cinemaBookingStatus' field.
    * @return The value of the 'cinemaBookingStatus' field.
    */
@@ -413,20 +367,20 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
   }
 
   /**
-   * Gets the value of the 'Seats' field.
-   * @return The value of the 'Seats' field.
+   * Gets the value of the 'quantity' field.
+   * @return The value of the 'quantity' field.
    */
-  public java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat> getSeats() {
-    return Seats;
+  public java.math.BigDecimal getQuantity() {
+    return quantity;
   }
 
 
   /**
-   * Sets the value of the 'Seats' field.
+   * Sets the value of the 'quantity' field.
    * @param value the value to set.
    */
-  public void setSeats(java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat> value) {
-    this.Seats = value;
+  public void setQuantity(java.math.BigDecimal value) {
+    this.quantity = value;
   }
 
   /**
@@ -513,10 +467,8 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
     private java.lang.String showId;
     private java.lang.String cinemaId;
     private java.lang.String cinemaHallId;
-    private java.lang.String cinemaHallSeatId;
-    private int showSeatId;
     private com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus cinemaBookingStatus;
-    private java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat> Seats;
+    private java.math.BigDecimal quantity;
     private java.math.BigDecimal price;
     private java.time.Instant createdAt;
 
@@ -567,29 +519,21 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
         this.cinemaHallId = data().deepCopy(fields()[8].schema(), other.cinemaHallId);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
-      if (isValidValue(fields()[9], other.cinemaHallSeatId)) {
-        this.cinemaHallSeatId = data().deepCopy(fields()[9].schema(), other.cinemaHallSeatId);
+      if (isValidValue(fields()[9], other.cinemaBookingStatus)) {
+        this.cinemaBookingStatus = data().deepCopy(fields()[9].schema(), other.cinemaBookingStatus);
         fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
-      if (isValidValue(fields()[10], other.showSeatId)) {
-        this.showSeatId = data().deepCopy(fields()[10].schema(), other.showSeatId);
+      if (isValidValue(fields()[10], other.quantity)) {
+        this.quantity = data().deepCopy(fields()[10].schema(), other.quantity);
         fieldSetFlags()[10] = other.fieldSetFlags()[10];
       }
-      if (isValidValue(fields()[11], other.cinemaBookingStatus)) {
-        this.cinemaBookingStatus = data().deepCopy(fields()[11].schema(), other.cinemaBookingStatus);
+      if (isValidValue(fields()[11], other.price)) {
+        this.price = data().deepCopy(fields()[11].schema(), other.price);
         fieldSetFlags()[11] = other.fieldSetFlags()[11];
       }
-      if (isValidValue(fields()[12], other.Seats)) {
-        this.Seats = data().deepCopy(fields()[12].schema(), other.Seats);
+      if (isValidValue(fields()[12], other.createdAt)) {
+        this.createdAt = data().deepCopy(fields()[12].schema(), other.createdAt);
         fieldSetFlags()[12] = other.fieldSetFlags()[12];
-      }
-      if (isValidValue(fields()[13], other.price)) {
-        this.price = data().deepCopy(fields()[13].schema(), other.price);
-        fieldSetFlags()[13] = other.fieldSetFlags()[13];
-      }
-      if (isValidValue(fields()[14], other.createdAt)) {
-        this.createdAt = data().deepCopy(fields()[14].schema(), other.createdAt);
-        fieldSetFlags()[14] = other.fieldSetFlags()[14];
       }
     }
 
@@ -635,29 +579,21 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
         this.cinemaHallId = data().deepCopy(fields()[8].schema(), other.cinemaHallId);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.cinemaHallSeatId)) {
-        this.cinemaHallSeatId = data().deepCopy(fields()[9].schema(), other.cinemaHallSeatId);
+      if (isValidValue(fields()[9], other.cinemaBookingStatus)) {
+        this.cinemaBookingStatus = data().deepCopy(fields()[9].schema(), other.cinemaBookingStatus);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.showSeatId)) {
-        this.showSeatId = data().deepCopy(fields()[10].schema(), other.showSeatId);
+      if (isValidValue(fields()[10], other.quantity)) {
+        this.quantity = data().deepCopy(fields()[10].schema(), other.quantity);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.cinemaBookingStatus)) {
-        this.cinemaBookingStatus = data().deepCopy(fields()[11].schema(), other.cinemaBookingStatus);
+      if (isValidValue(fields()[11], other.price)) {
+        this.price = data().deepCopy(fields()[11].schema(), other.price);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.Seats)) {
-        this.Seats = data().deepCopy(fields()[12].schema(), other.Seats);
+      if (isValidValue(fields()[12], other.createdAt)) {
+        this.createdAt = data().deepCopy(fields()[12].schema(), other.createdAt);
         fieldSetFlags()[12] = true;
-      }
-      if (isValidValue(fields()[13], other.price)) {
-        this.price = data().deepCopy(fields()[13].schema(), other.price);
-        fieldSetFlags()[13] = true;
-      }
-      if (isValidValue(fields()[14], other.createdAt)) {
-        this.createdAt = data().deepCopy(fields()[14].schema(), other.createdAt);
-        fieldSetFlags()[14] = true;
       }
     }
 
@@ -1022,85 +958,6 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
     }
 
     /**
-      * Gets the value of the 'cinemaHallSeatId' field.
-      * @return The value.
-      */
-    public java.lang.String getCinemaHallSeatId() {
-      return cinemaHallSeatId;
-    }
-
-
-    /**
-      * Sets the value of the 'cinemaHallSeatId' field.
-      * @param value The value of 'cinemaHallSeatId'.
-      * @return This builder.
-      */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder setCinemaHallSeatId(java.lang.String value) {
-      validate(fields()[9], value);
-      this.cinemaHallSeatId = value;
-      fieldSetFlags()[9] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'cinemaHallSeatId' field has been set.
-      * @return True if the 'cinemaHallSeatId' field has been set, false otherwise.
-      */
-    public boolean hasCinemaHallSeatId() {
-      return fieldSetFlags()[9];
-    }
-
-
-    /**
-      * Clears the value of the 'cinemaHallSeatId' field.
-      * @return This builder.
-      */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder clearCinemaHallSeatId() {
-      cinemaHallSeatId = null;
-      fieldSetFlags()[9] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'showSeatId' field.
-      * @return The value.
-      */
-    public int getShowSeatId() {
-      return showSeatId;
-    }
-
-
-    /**
-      * Sets the value of the 'showSeatId' field.
-      * @param value The value of 'showSeatId'.
-      * @return This builder.
-      */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder setShowSeatId(int value) {
-      validate(fields()[10], value);
-      this.showSeatId = value;
-      fieldSetFlags()[10] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'showSeatId' field has been set.
-      * @return True if the 'showSeatId' field has been set, false otherwise.
-      */
-    public boolean hasShowSeatId() {
-      return fieldSetFlags()[10];
-    }
-
-
-    /**
-      * Clears the value of the 'showSeatId' field.
-      * @return This builder.
-      */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder clearShowSeatId() {
-      fieldSetFlags()[10] = false;
-      return this;
-    }
-
-    /**
       * Gets the value of the 'cinemaBookingStatus' field.
       * @return The value.
       */
@@ -1115,9 +972,9 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder setCinemaBookingStatus(com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus value) {
-      validate(fields()[11], value);
+      validate(fields()[9], value);
       this.cinemaBookingStatus = value;
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -1126,7 +983,7 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       * @return True if the 'cinemaBookingStatus' field has been set, false otherwise.
       */
     public boolean hasCinemaBookingStatus() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[9];
     }
 
 
@@ -1136,47 +993,47 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder clearCinemaBookingStatus() {
       cinemaBookingStatus = null;
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
     /**
-      * Gets the value of the 'Seats' field.
+      * Gets the value of the 'quantity' field.
       * @return The value.
       */
-    public java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat> getSeats() {
-      return Seats;
+    public java.math.BigDecimal getQuantity() {
+      return quantity;
     }
 
 
     /**
-      * Sets the value of the 'Seats' field.
-      * @param value The value of 'Seats'.
+      * Sets the value of the 'quantity' field.
+      * @param value The value of 'quantity'.
       * @return This builder.
       */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder setSeats(java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat> value) {
-      validate(fields()[12], value);
-      this.Seats = value;
-      fieldSetFlags()[12] = true;
+    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder setQuantity(java.math.BigDecimal value) {
+      validate(fields()[10], value);
+      this.quantity = value;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
     /**
-      * Checks whether the 'Seats' field has been set.
-      * @return True if the 'Seats' field has been set, false otherwise.
+      * Checks whether the 'quantity' field has been set.
+      * @return True if the 'quantity' field has been set, false otherwise.
       */
-    public boolean hasSeats() {
-      return fieldSetFlags()[12];
+    public boolean hasQuantity() {
+      return fieldSetFlags()[10];
     }
 
 
     /**
-      * Clears the value of the 'Seats' field.
+      * Clears the value of the 'quantity' field.
       * @return This builder.
       */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder clearSeats() {
-      Seats = null;
-      fieldSetFlags()[12] = false;
+    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder clearQuantity() {
+      quantity = null;
+      fieldSetFlags()[10] = false;
       return this;
     }
 
@@ -1195,9 +1052,9 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder setPrice(java.math.BigDecimal value) {
-      validate(fields()[13], value);
+      validate(fields()[11], value);
       this.price = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[11] = true;
       return this;
     }
 
@@ -1206,7 +1063,7 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       * @return True if the 'price' field has been set, false otherwise.
       */
     public boolean hasPrice() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[11];
     }
 
 
@@ -1216,7 +1073,7 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder clearPrice() {
       price = null;
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -1235,9 +1092,9 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder setCreatedAt(java.time.Instant value) {
-      validate(fields()[14], value);
+      validate(fields()[12], value);
       this.createdAt = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
-      fieldSetFlags()[14] = true;
+      fieldSetFlags()[12] = true;
       return this;
     }
 
@@ -1246,7 +1103,7 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       * @return True if the 'createdAt' field has been set, false otherwise.
       */
     public boolean hasCreatedAt() {
-      return fieldSetFlags()[14];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1255,7 +1112,7 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
       * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalRequestAvroModel.Builder clearCreatedAt() {
-      fieldSetFlags()[14] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1273,12 +1130,10 @@ public class CinemaApprovalRequestAvroModel extends org.apache.avro.specific.Spe
         record.showId = fieldSetFlags()[6] ? this.showId : (java.lang.String) defaultValue(fields()[6]);
         record.cinemaId = fieldSetFlags()[7] ? this.cinemaId : (java.lang.String) defaultValue(fields()[7]);
         record.cinemaHallId = fieldSetFlags()[8] ? this.cinemaHallId : (java.lang.String) defaultValue(fields()[8]);
-        record.cinemaHallSeatId = fieldSetFlags()[9] ? this.cinemaHallSeatId : (java.lang.String) defaultValue(fields()[9]);
-        record.showSeatId = fieldSetFlags()[10] ? this.showSeatId : (java.lang.Integer) defaultValue(fields()[10]);
-        record.cinemaBookingStatus = fieldSetFlags()[11] ? this.cinemaBookingStatus : (com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus) defaultValue(fields()[11]);
-        record.Seats = fieldSetFlags()[12] ? this.Seats : (java.util.List<com.onboard.cinema.book.show.kafka.booking.avro.model.Seat>) defaultValue(fields()[12]);
-        record.price = fieldSetFlags()[13] ? this.price : (java.math.BigDecimal) defaultValue(fields()[13]);
-        record.createdAt = fieldSetFlags()[14] ? this.createdAt : (java.time.Instant) defaultValue(fields()[14]);
+        record.cinemaBookingStatus = fieldSetFlags()[9] ? this.cinemaBookingStatus : (com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaBookingStatus) defaultValue(fields()[9]);
+        record.quantity = fieldSetFlags()[10] ? this.quantity : (java.math.BigDecimal) defaultValue(fields()[10]);
+        record.price = fieldSetFlags()[11] ? this.price : (java.math.BigDecimal) defaultValue(fields()[11]);
+        record.createdAt = fieldSetFlags()[12] ? this.createdAt : (java.time.Instant) defaultValue(fields()[12]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

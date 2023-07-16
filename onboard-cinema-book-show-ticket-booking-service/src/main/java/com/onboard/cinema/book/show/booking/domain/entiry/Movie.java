@@ -59,4 +59,5 @@ public class Movie extends BaseEntity<MovieId> {
     public LocalDate getReleaseDate() {
         return releaseDate;
     }
+
 }

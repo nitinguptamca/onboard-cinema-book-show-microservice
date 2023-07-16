@@ -20,6 +20,7 @@ public class Show extends BaseEntity<ShowId> {
     private Timestamp endTime;
     private LocalDate showDate;
     private Money price;
+    private ShowId showId;
 
     public Show(ShowId showId) {
         super.setId(showId);
@@ -30,13 +31,15 @@ public class Show extends BaseEntity<ShowId> {
                 Timestamp startTime,
                 Timestamp endTime,
                 LocalDate showDate,
-                Money price) {
+                Money price,
+         ShowId showId) {
         this.cinemaHallId = cinemaHallId;
         this.movieId = movieId;
         this.startTime = startTime;
         this.endTime = endTime;
         this.showDate = showDate;
         this.price = price;
+        this.showId=showId;
     }
 
     public void updateWithConfirmedTitleAndPrice(UUID cinemaHallId,

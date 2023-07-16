@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 7689738253484912769L;
+  private static final long serialVersionUID = 7309776327173115571L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CinemaApprovalResponseAvroModel\",\"namespace\":\"com.onboard.cinema.book.show.kafka.booking.avro.model\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"sagaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"paymentId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"bookingId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"movieId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"showId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaHallId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaHallSeatId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"showSeatId\",\"type\":{\"type\":\"int\",\"logicalType\":\"decimal\"}},{\"name\":\"createdAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"bookApprovalStatus\",\"type\":{\"type\":\"enum\",\"name\":\"BookApprovalStatus\",\"symbols\":[\"APPROVED\",\"REJECTED\"]}},{\"name\":\"failureMessages\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"CinemaApprovalResponseAvroModel\",\"namespace\":\"com.onboard.cinema.book.show.kafka.booking.avro.model\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"sagaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"paymentId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"bookingId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"movieId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"showId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaHallId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"createdAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"bookApprovalStatus\",\"type\":{\"type\":\"enum\",\"name\":\"BookApprovalStatus\",\"symbols\":[\"APPROVED\",\"REJECTED\"]}},{\"name\":\"seats\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}},{\"name\":\"failureMessages\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -85,10 +85,9 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
   private java.lang.String showId;
   private java.lang.String cinemaId;
   private java.lang.String cinemaHallId;
-  private java.lang.String cinemaHallSeatId;
-  private int showSeatId;
   private java.time.Instant createdAt;
   private com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus bookApprovalStatus;
+  private java.util.List<java.lang.String> seats;
   private java.util.List<java.lang.String> failureMessages;
 
   /**
@@ -109,13 +108,12 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
    * @param showId The new value for showId
    * @param cinemaId The new value for cinemaId
    * @param cinemaHallId The new value for cinemaHallId
-   * @param cinemaHallSeatId The new value for cinemaHallSeatId
-   * @param showSeatId The new value for showSeatId
    * @param createdAt The new value for createdAt
    * @param bookApprovalStatus The new value for bookApprovalStatus
+   * @param seats The new value for seats
    * @param failureMessages The new value for failureMessages
    */
-  public CinemaApprovalResponseAvroModel(java.lang.String id, java.lang.String sagaId, java.lang.String paymentId, java.lang.String customerId, java.lang.String bookingId, java.lang.String movieId, java.lang.String showId, java.lang.String cinemaId, java.lang.String cinemaHallId, java.lang.String cinemaHallSeatId, java.lang.Integer showSeatId, java.time.Instant createdAt, com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus bookApprovalStatus, java.util.List<java.lang.String> failureMessages) {
+  public CinemaApprovalResponseAvroModel(java.lang.String id, java.lang.String sagaId, java.lang.String paymentId, java.lang.String customerId, java.lang.String bookingId, java.lang.String movieId, java.lang.String showId, java.lang.String cinemaId, java.lang.String cinemaHallId, java.time.Instant createdAt, com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus bookApprovalStatus, java.util.List<java.lang.String> seats, java.util.List<java.lang.String> failureMessages) {
     this.id = id;
     this.sagaId = sagaId;
     this.paymentId = paymentId;
@@ -125,10 +123,9 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
     this.showId = showId;
     this.cinemaId = cinemaId;
     this.cinemaHallId = cinemaHallId;
-    this.cinemaHallSeatId = cinemaHallSeatId;
-    this.showSeatId = showSeatId;
     this.createdAt = createdAt.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
     this.bookApprovalStatus = bookApprovalStatus;
+    this.seats = seats;
     this.failureMessages = failureMessages;
   }
 
@@ -146,11 +143,10 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
     case 6: return showId;
     case 7: return cinemaId;
     case 8: return cinemaHallId;
-    case 9: return cinemaHallSeatId;
-    case 10: return showSeatId;
-    case 11: return createdAt;
-    case 12: return bookApprovalStatus;
-    case 13: return failureMessages;
+    case 9: return createdAt;
+    case 10: return bookApprovalStatus;
+    case 11: return seats;
+    case 12: return failureMessages;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -166,9 +162,8 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       null,
       null,
       null,
-      null,
-      null,
       new org.apache.avro.data.TimeConversions.TimestampMillisConversion(),
+      null,
       null,
       null,
       null
@@ -192,11 +187,10 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
     case 6: showId = value$ != null ? value$.toString() : null; break;
     case 7: cinemaId = value$ != null ? value$.toString() : null; break;
     case 8: cinemaHallId = value$ != null ? value$.toString() : null; break;
-    case 9: cinemaHallSeatId = value$ != null ? value$.toString() : null; break;
-    case 10: showSeatId = (java.lang.Integer)value$; break;
-    case 11: createdAt = (java.time.Instant)value$; break;
-    case 12: bookApprovalStatus = (com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus)value$; break;
-    case 13: failureMessages = (java.util.List<java.lang.String>)value$; break;
+    case 9: createdAt = (java.time.Instant)value$; break;
+    case 10: bookApprovalStatus = (com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus)value$; break;
+    case 11: seats = (java.util.List<java.lang.String>)value$; break;
+    case 12: failureMessages = (java.util.List<java.lang.String>)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -355,40 +349,6 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
   }
 
   /**
-   * Gets the value of the 'cinemaHallSeatId' field.
-   * @return The value of the 'cinemaHallSeatId' field.
-   */
-  public java.lang.String getCinemaHallSeatId() {
-    return cinemaHallSeatId;
-  }
-
-
-  /**
-   * Sets the value of the 'cinemaHallSeatId' field.
-   * @param value the value to set.
-   */
-  public void setCinemaHallSeatId(java.lang.String value) {
-    this.cinemaHallSeatId = value;
-  }
-
-  /**
-   * Gets the value of the 'showSeatId' field.
-   * @return The value of the 'showSeatId' field.
-   */
-  public int getShowSeatId() {
-    return showSeatId;
-  }
-
-
-  /**
-   * Sets the value of the 'showSeatId' field.
-   * @param value the value to set.
-   */
-  public void setShowSeatId(int value) {
-    this.showSeatId = value;
-  }
-
-  /**
    * Gets the value of the 'createdAt' field.
    * @return The value of the 'createdAt' field.
    */
@@ -420,6 +380,23 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
    */
   public void setBookApprovalStatus(com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus value) {
     this.bookApprovalStatus = value;
+  }
+
+  /**
+   * Gets the value of the 'seats' field.
+   * @return The value of the 'seats' field.
+   */
+  public java.util.List<java.lang.String> getSeats() {
+    return seats;
+  }
+
+
+  /**
+   * Sets the value of the 'seats' field.
+   * @param value the value to set.
+   */
+  public void setSeats(java.util.List<java.lang.String> value) {
+    this.seats = value;
   }
 
   /**
@@ -489,10 +466,9 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
     private java.lang.String showId;
     private java.lang.String cinemaId;
     private java.lang.String cinemaHallId;
-    private java.lang.String cinemaHallSeatId;
-    private int showSeatId;
     private java.time.Instant createdAt;
     private com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus bookApprovalStatus;
+    private java.util.List<java.lang.String> seats;
     private java.util.List<java.lang.String> failureMessages;
 
     /** Creates a new Builder */
@@ -542,25 +518,21 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
         this.cinemaHallId = data().deepCopy(fields()[8].schema(), other.cinemaHallId);
         fieldSetFlags()[8] = other.fieldSetFlags()[8];
       }
-      if (isValidValue(fields()[9], other.cinemaHallSeatId)) {
-        this.cinemaHallSeatId = data().deepCopy(fields()[9].schema(), other.cinemaHallSeatId);
+      if (isValidValue(fields()[9], other.createdAt)) {
+        this.createdAt = data().deepCopy(fields()[9].schema(), other.createdAt);
         fieldSetFlags()[9] = other.fieldSetFlags()[9];
       }
-      if (isValidValue(fields()[10], other.showSeatId)) {
-        this.showSeatId = data().deepCopy(fields()[10].schema(), other.showSeatId);
+      if (isValidValue(fields()[10], other.bookApprovalStatus)) {
+        this.bookApprovalStatus = data().deepCopy(fields()[10].schema(), other.bookApprovalStatus);
         fieldSetFlags()[10] = other.fieldSetFlags()[10];
       }
-      if (isValidValue(fields()[11], other.createdAt)) {
-        this.createdAt = data().deepCopy(fields()[11].schema(), other.createdAt);
+      if (isValidValue(fields()[11], other.seats)) {
+        this.seats = data().deepCopy(fields()[11].schema(), other.seats);
         fieldSetFlags()[11] = other.fieldSetFlags()[11];
       }
-      if (isValidValue(fields()[12], other.bookApprovalStatus)) {
-        this.bookApprovalStatus = data().deepCopy(fields()[12].schema(), other.bookApprovalStatus);
+      if (isValidValue(fields()[12], other.failureMessages)) {
+        this.failureMessages = data().deepCopy(fields()[12].schema(), other.failureMessages);
         fieldSetFlags()[12] = other.fieldSetFlags()[12];
-      }
-      if (isValidValue(fields()[13], other.failureMessages)) {
-        this.failureMessages = data().deepCopy(fields()[13].schema(), other.failureMessages);
-        fieldSetFlags()[13] = other.fieldSetFlags()[13];
       }
     }
 
@@ -606,25 +578,21 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
         this.cinemaHallId = data().deepCopy(fields()[8].schema(), other.cinemaHallId);
         fieldSetFlags()[8] = true;
       }
-      if (isValidValue(fields()[9], other.cinemaHallSeatId)) {
-        this.cinemaHallSeatId = data().deepCopy(fields()[9].schema(), other.cinemaHallSeatId);
+      if (isValidValue(fields()[9], other.createdAt)) {
+        this.createdAt = data().deepCopy(fields()[9].schema(), other.createdAt);
         fieldSetFlags()[9] = true;
       }
-      if (isValidValue(fields()[10], other.showSeatId)) {
-        this.showSeatId = data().deepCopy(fields()[10].schema(), other.showSeatId);
+      if (isValidValue(fields()[10], other.bookApprovalStatus)) {
+        this.bookApprovalStatus = data().deepCopy(fields()[10].schema(), other.bookApprovalStatus);
         fieldSetFlags()[10] = true;
       }
-      if (isValidValue(fields()[11], other.createdAt)) {
-        this.createdAt = data().deepCopy(fields()[11].schema(), other.createdAt);
+      if (isValidValue(fields()[11], other.seats)) {
+        this.seats = data().deepCopy(fields()[11].schema(), other.seats);
         fieldSetFlags()[11] = true;
       }
-      if (isValidValue(fields()[12], other.bookApprovalStatus)) {
-        this.bookApprovalStatus = data().deepCopy(fields()[12].schema(), other.bookApprovalStatus);
+      if (isValidValue(fields()[12], other.failureMessages)) {
+        this.failureMessages = data().deepCopy(fields()[12].schema(), other.failureMessages);
         fieldSetFlags()[12] = true;
-      }
-      if (isValidValue(fields()[13], other.failureMessages)) {
-        this.failureMessages = data().deepCopy(fields()[13].schema(), other.failureMessages);
-        fieldSetFlags()[13] = true;
       }
     }
 
@@ -989,85 +957,6 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
     }
 
     /**
-      * Gets the value of the 'cinemaHallSeatId' field.
-      * @return The value.
-      */
-    public java.lang.String getCinemaHallSeatId() {
-      return cinemaHallSeatId;
-    }
-
-
-    /**
-      * Sets the value of the 'cinemaHallSeatId' field.
-      * @param value The value of 'cinemaHallSeatId'.
-      * @return This builder.
-      */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder setCinemaHallSeatId(java.lang.String value) {
-      validate(fields()[9], value);
-      this.cinemaHallSeatId = value;
-      fieldSetFlags()[9] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'cinemaHallSeatId' field has been set.
-      * @return True if the 'cinemaHallSeatId' field has been set, false otherwise.
-      */
-    public boolean hasCinemaHallSeatId() {
-      return fieldSetFlags()[9];
-    }
-
-
-    /**
-      * Clears the value of the 'cinemaHallSeatId' field.
-      * @return This builder.
-      */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder clearCinemaHallSeatId() {
-      cinemaHallSeatId = null;
-      fieldSetFlags()[9] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'showSeatId' field.
-      * @return The value.
-      */
-    public int getShowSeatId() {
-      return showSeatId;
-    }
-
-
-    /**
-      * Sets the value of the 'showSeatId' field.
-      * @param value The value of 'showSeatId'.
-      * @return This builder.
-      */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder setShowSeatId(int value) {
-      validate(fields()[10], value);
-      this.showSeatId = value;
-      fieldSetFlags()[10] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'showSeatId' field has been set.
-      * @return True if the 'showSeatId' field has been set, false otherwise.
-      */
-    public boolean hasShowSeatId() {
-      return fieldSetFlags()[10];
-    }
-
-
-    /**
-      * Clears the value of the 'showSeatId' field.
-      * @return This builder.
-      */
-    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder clearShowSeatId() {
-      fieldSetFlags()[10] = false;
-      return this;
-    }
-
-    /**
       * Gets the value of the 'createdAt' field.
       * @return The value.
       */
@@ -1082,9 +971,9 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder setCreatedAt(java.time.Instant value) {
-      validate(fields()[11], value);
+      validate(fields()[9], value);
       this.createdAt = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
-      fieldSetFlags()[11] = true;
+      fieldSetFlags()[9] = true;
       return this;
     }
 
@@ -1093,7 +982,7 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       * @return True if the 'createdAt' field has been set, false otherwise.
       */
     public boolean hasCreatedAt() {
-      return fieldSetFlags()[11];
+      return fieldSetFlags()[9];
     }
 
 
@@ -1102,7 +991,7 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder clearCreatedAt() {
-      fieldSetFlags()[11] = false;
+      fieldSetFlags()[9] = false;
       return this;
     }
 
@@ -1121,9 +1010,9 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder setBookApprovalStatus(com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus value) {
-      validate(fields()[12], value);
+      validate(fields()[10], value);
       this.bookApprovalStatus = value;
-      fieldSetFlags()[12] = true;
+      fieldSetFlags()[10] = true;
       return this;
     }
 
@@ -1132,7 +1021,7 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       * @return True if the 'bookApprovalStatus' field has been set, false otherwise.
       */
     public boolean hasBookApprovalStatus() {
-      return fieldSetFlags()[12];
+      return fieldSetFlags()[10];
     }
 
 
@@ -1142,7 +1031,47 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder clearBookApprovalStatus() {
       bookApprovalStatus = null;
-      fieldSetFlags()[12] = false;
+      fieldSetFlags()[10] = false;
+      return this;
+    }
+
+    /**
+      * Gets the value of the 'seats' field.
+      * @return The value.
+      */
+    public java.util.List<java.lang.String> getSeats() {
+      return seats;
+    }
+
+
+    /**
+      * Sets the value of the 'seats' field.
+      * @param value The value of 'seats'.
+      * @return This builder.
+      */
+    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder setSeats(java.util.List<java.lang.String> value) {
+      validate(fields()[11], value);
+      this.seats = value;
+      fieldSetFlags()[11] = true;
+      return this;
+    }
+
+    /**
+      * Checks whether the 'seats' field has been set.
+      * @return True if the 'seats' field has been set, false otherwise.
+      */
+    public boolean hasSeats() {
+      return fieldSetFlags()[11];
+    }
+
+
+    /**
+      * Clears the value of the 'seats' field.
+      * @return This builder.
+      */
+    public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder clearSeats() {
+      seats = null;
+      fieldSetFlags()[11] = false;
       return this;
     }
 
@@ -1161,9 +1090,9 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder setFailureMessages(java.util.List<java.lang.String> value) {
-      validate(fields()[13], value);
+      validate(fields()[12], value);
       this.failureMessages = value;
-      fieldSetFlags()[13] = true;
+      fieldSetFlags()[12] = true;
       return this;
     }
 
@@ -1172,7 +1101,7 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       * @return True if the 'failureMessages' field has been set, false otherwise.
       */
     public boolean hasFailureMessages() {
-      return fieldSetFlags()[13];
+      return fieldSetFlags()[12];
     }
 
 
@@ -1182,7 +1111,7 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.CinemaApprovalResponseAvroModel.Builder clearFailureMessages() {
       failureMessages = null;
-      fieldSetFlags()[13] = false;
+      fieldSetFlags()[12] = false;
       return this;
     }
 
@@ -1200,11 +1129,10 @@ public class CinemaApprovalResponseAvroModel extends org.apache.avro.specific.Sp
         record.showId = fieldSetFlags()[6] ? this.showId : (java.lang.String) defaultValue(fields()[6]);
         record.cinemaId = fieldSetFlags()[7] ? this.cinemaId : (java.lang.String) defaultValue(fields()[7]);
         record.cinemaHallId = fieldSetFlags()[8] ? this.cinemaHallId : (java.lang.String) defaultValue(fields()[8]);
-        record.cinemaHallSeatId = fieldSetFlags()[9] ? this.cinemaHallSeatId : (java.lang.String) defaultValue(fields()[9]);
-        record.showSeatId = fieldSetFlags()[10] ? this.showSeatId : (java.lang.Integer) defaultValue(fields()[10]);
-        record.createdAt = fieldSetFlags()[11] ? this.createdAt : (java.time.Instant) defaultValue(fields()[11]);
-        record.bookApprovalStatus = fieldSetFlags()[12] ? this.bookApprovalStatus : (com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus) defaultValue(fields()[12]);
-        record.failureMessages = fieldSetFlags()[13] ? this.failureMessages : (java.util.List<java.lang.String>) defaultValue(fields()[13]);
+        record.createdAt = fieldSetFlags()[9] ? this.createdAt : (java.time.Instant) defaultValue(fields()[9]);
+        record.bookApprovalStatus = fieldSetFlags()[10] ? this.bookApprovalStatus : (com.onboard.cinema.book.show.kafka.booking.avro.model.BookApprovalStatus) defaultValue(fields()[10]);
+        record.seats = fieldSetFlags()[11] ? this.seats : (java.util.List<java.lang.String>) defaultValue(fields()[11]);
+        record.failureMessages = fieldSetFlags()[12] ? this.failureMessages : (java.util.List<java.lang.String>) defaultValue(fields()[12]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

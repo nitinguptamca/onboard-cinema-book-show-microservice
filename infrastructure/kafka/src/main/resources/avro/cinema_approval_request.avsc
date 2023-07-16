@@ -77,28 +77,11 @@
       }
     },
     {
-      "name": "Seats",
+      "name": "quantity",
       "type": {
-        "type": "array",
-        "items": {
-          "name": "Seat",
-          "type": "record",
-          "fields": [
-            {
-              "name": "id",
-              "type": "string",
-              "logicalType": "uuid"
-            },
-            {
-              "name": "showSeatId",
-              "type": "string"
-            },
-            {
-              "name": "quantity",
-              "type": "int"
-            }
-          ]
-        }
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 2
       }
     },
     {

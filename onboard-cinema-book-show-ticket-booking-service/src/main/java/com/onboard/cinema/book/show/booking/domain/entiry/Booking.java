@@ -31,12 +31,11 @@ public class Booking extends AggregateRoot<BookingId> {
     private final CustomerId customerId;
     private final CinemaHallId cinemaHallId;
     private final CinemaId cinemaId;
-    private final CinemaHallSeatId cinemaHallSeatId;
-    private final int showSeatId;
     private final Movie movie;
     private final Show show;
     private final StreetAddress streetAddress;
     private final Money price;
+    private final int quantity;
     private final List<BookShow> bookShowList;
     private TrackingId trackingId;
     private BookingStatus bookingStatus;
