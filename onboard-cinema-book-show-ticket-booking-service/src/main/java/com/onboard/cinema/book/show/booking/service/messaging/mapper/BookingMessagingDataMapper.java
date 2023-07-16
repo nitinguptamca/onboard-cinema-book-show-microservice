@@ -1,6 +1,7 @@
 package com.onboard.cinema.book.show.booking.service.messaging.mapper;
 
 import com.onboard.cinema.book.show.booking.domain.entiry.Booking;
+import com.onboard.cinema.book.show.booking.domain.event.BookingCancelledEvent;
 import com.onboard.cinema.book.show.booking.domain.event.BookingCreatedEvent;
 import com.onboard.cinema.book.show.booking.domain.event.BookingPaidEvent;
 import com.onboard.cinema.book.show.booking.service.domain.dto.message.CinemaApprovalResponse;
@@ -36,8 +37,8 @@ public class BookingMessagingDataMapper {
                 .build();
     }
 
-    public PaymentRequestAvroModel bookingCancelledEventToPaymentRequestAvroModel(BookingCreatedEvent bookingCreatedEvent) {
-        Booking booking = bookingCreatedEvent.getBooking();
+    public PaymentRequestAvroModel bookingCancelledEventToPaymentRequestAvroModel(BookingCancelledEvent bookingCancelledEvent) {
+        Booking booking = bookingCancelledEvent.getBooking();
         return PaymentRequestAvroModel.newBuilder()
                 .setId(UUID.randomUUID().toString())
                 .setSagaId("")
@@ -48,7 +49,7 @@ public class BookingMessagingDataMapper {
                 .setCinemaId(booking.getCinemaId().getValue().toString())
                 .setCinemaHallId(booking.getCinemaHallId().getValue().toString())
                 .setPrice(booking.getPrice().getAmount())
-                .setCreatedAt(bookingCreatedEvent.getCreatedAt().toInstant())
+                .setCreatedAt(bookingCancelledEvent.getCreatedAt().toInstant())
                 .setPaymentBookingStatus(PaymentBookingStatus.CANCELLED)
                 .build();
     }
