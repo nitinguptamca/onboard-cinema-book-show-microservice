@@ -25,7 +25,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Payment extends AggregateRoot<PaymentId> {
-
+    private final PaymentId paymentId;
     private final BookingId bookingId;
     private final CustomerId customerId;
     private final Money price;
@@ -35,6 +35,7 @@ public class Payment extends AggregateRoot<PaymentId> {
     private CinemaId cinemaId;
     private CinemaHallId cinemaHallId;
     private ShowId showId;
+    private int quantity;
 
     public void initializePayment() {
         setId(new PaymentId(UUID.randomUUID()));
