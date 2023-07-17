@@ -29,7 +29,6 @@ public class CinemaApprovalResponseKafkaListener implements KafkaConsumer<Cinema
         this.bookingMessagingDataMapper = bookingMessagingDataMapper;
     }
 
-
     @Override
     @KafkaListener(id = "${kafka-consumer-config.cinema-approval-consumer-group-id}",
             topics = "${booking-service.cinema-approval-response-topic-name}")
