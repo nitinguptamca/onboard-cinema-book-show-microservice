@@ -1,0 +1,55 @@
+{
+    "namespace": "com.onboard.cinema.book.show.kafka.booking.avro.model",
+    "type": "record",
+    "name": "CinemaApprovalResponseAvroModel",
+    "fields": [
+        {
+            "name": "id",
+            "type": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "sagaId",
+            "type": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "cinemaId",
+            "type": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "bookingId",
+            "type": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "createdAt",
+            "type": {
+                "type": "long",
+                "logicalType": "timestamp-millis"
+            }
+        },
+        {
+            "name": "bookApprovalStatus",
+            "type": {
+                  "type": "enum",
+                  "name": "BookApprovalStatus",
+                  "symbols": ["APPROVED", "REJECTED"]
+               }
+        },
+        {
+            "name": "failureMessages",
+            "type": {
+                "type": "array",
+                "items":{
+                  "type":"string"
+               }
+            }
+        }
+    ]
+}
