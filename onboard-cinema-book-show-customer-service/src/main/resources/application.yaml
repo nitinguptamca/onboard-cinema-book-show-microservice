@@ -22,8 +22,8 @@ spring:
     database: POSTGRESQL
     open-in-view: true
     show-sql: true
-    #hibernate:
-     # ddl-auto: create
+    hibernate:
+      ddl-auto: create
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=customer&binaryTransfer=true&reWriteBatchedInserts=true
     username: postgres

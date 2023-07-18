@@ -23,6 +23,13 @@
         <module>onboard-cinema-book-show-cinema-mgmt-service</module>
         <module>common-module</module>
         <module>infrastructure</module>
+        <module>payment-service</module>
+        <module>payment-service/payment-container</module>
+        <module>payment-service/payment-dataaccess</module>
+        <module>payment-service/payment-domain</module>
+        <module>payment-service/payment-messaging</module>
+        <module>booking-service</module>
+        <module>cinema-service</module>
     </modules>
 
     <properties>
