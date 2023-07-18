@@ -3,7 +3,7 @@ spring:
   cloud:
     config:
       activate:
-        on-profile: default
+        on-profile: local
       server:
         git:
           uri: https://github.com/nitinguptamca/onboard-cinema-book-show-config

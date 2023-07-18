@@ -12,7 +12,7 @@ spring:
     name: cinema-mgmt-service
   config:
     activate:
-      on-profile: default
+      on-profile: local
     import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
   jpa:
     database: POSTGRESQL
