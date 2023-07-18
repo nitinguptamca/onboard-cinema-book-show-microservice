@@ -5,15 +5,19 @@
  */
 package com.onboard.cinema.book.show.kafka.booking.avro.model;
 
-import org.apache.avro.message.BinaryMessageDecoder;
-import org.apache.avro.message.BinaryMessageEncoder;
-import org.apache.avro.message.SchemaStore;
+import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
+import org.apache.avro.util.Utf8;
+import org.apache.avro.message.BinaryMessageEncoder;
+import org.apache.avro.message.BinaryMessageDecoder;
+import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentResponseAvroModel\",\"namespace\":\"com.onboard.cinema.book.show.kafka.booking.avro.model\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"sagaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"paymentId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"bookingId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"movieId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"showId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaHallId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"price\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":2}},{\"name\":\"quantity\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":2,\"scale\":0}},{\"name\":\"createdAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"paymentStatus\",\"type\":{\"type\":\"enum\",\"name\":\"PaymentStatus\",\"symbols\":[\"COMPLETED\",\"CANCELLED\",\"FAILED\"]}},{\"name\":\"failureMessages\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}}]}");
   private static final long serialVersionUID = -6587391012207387915L;
+
+
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentResponseAvroModel\",\"namespace\":\"com.onboard.cinema.book.show.kafka.booking.avro.model\",\"fields\":[{\"name\":\"id\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"sagaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"paymentId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"customerId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"bookingId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"movieId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"showId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"cinemaHallId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"price\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":2}},{\"name\":\"quantity\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":2,\"scale\":0}},{\"name\":\"createdAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}},{\"name\":\"paymentStatus\",\"type\":{\"type\":\"enum\",\"name\":\"PaymentStatus\",\"symbols\":[\"COMPLETED\",\"CANCELLED\",\"FAILED\"]}},{\"name\":\"failureMessages\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -83,24 +87,7 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
   private java.lang.String cinemaId;
   private java.lang.String cinemaHallId;
   private java.math.BigDecimal price;
-  private static final org.apache.avro.Conversion<?>[] conversions =
-      new org.apache.avro.Conversion<?>[] {
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              new org.apache.avro.Conversions.DecimalConversion(),
-              new org.apache.avro.Conversions.DecimalConversion(),
-              new org.apache.avro.data.TimeConversions.TimestampMillisConversion(),
-              null,
-              null,
-              null
-      };
+  private java.math.BigDecimal quantity;
   private java.time.Instant createdAt;
   private com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentStatus paymentStatus;
   private java.util.List<java.lang.String> failureMessages;
@@ -111,10 +98,7 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
    * one should use <code>newBuilder()</code>.
    */
   public PaymentResponseAvroModel() {}
-  private java.math.BigDecimal quantity;
 
-  public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
-  public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   /**
    * All-args constructor.
    * @param id The new value for id
@@ -149,41 +133,47 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
     this.failureMessages = failureMessages;
   }
 
+  public org.apache.avro.specific.SpecificData getSpecificData() { return MODEL$; }
+  public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call.
   public java.lang.Object get(int field$) {
     switch (field$) {
-      case 0:
-        return id;
-      case 1:
-        return sagaId;
-      case 2:
-        return paymentId;
-      case 3:
-        return customerId;
-      case 4:
-        return bookingId;
-      case 5:
-        return movieId;
-      case 6:
-        return showId;
-      case 7:
-        return cinemaId;
-      case 8:
-        return cinemaHallId;
-      case 9:
-        return price;
-      case 10:
-        return quantity;
-      case 11:
-        return createdAt;
-      case 12:
-        return paymentStatus;
-      case 13:
-        return failureMessages;
-      default:
-        throw new IndexOutOfBoundsException("Invalid index: " + field$);
+    case 0: return id;
+    case 1: return sagaId;
+    case 2: return paymentId;
+    case 3: return customerId;
+    case 4: return bookingId;
+    case 5: return movieId;
+    case 6: return showId;
+    case 7: return cinemaId;
+    case 8: return cinemaHallId;
+    case 9: return price;
+    case 10: return quantity;
+    case 11: return createdAt;
+    case 12: return paymentStatus;
+    case 13: return failureMessages;
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
+
+  private static final org.apache.avro.Conversion<?>[] conversions =
+      new org.apache.avro.Conversion<?>[] {
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      new org.apache.avro.Conversions.DecimalConversion(),
+      new org.apache.avro.Conversions.DecimalConversion(),
+      new org.apache.avro.data.TimeConversions.TimestampMillisConversion(),
+      null,
+      null,
+      null
+  };
 
   @Override
   public org.apache.avro.Conversion<?> getConversion(int field) {
@@ -194,50 +184,21 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
   @SuppressWarnings(value="unchecked")
   public void put(int field$, java.lang.Object value$) {
     switch (field$) {
-      case 0:
-        id = value$ != null ? value$.toString() : null;
-        break;
-      case 1:
-        sagaId = value$ != null ? value$.toString() : null;
-        break;
-      case 2:
-        paymentId = value$ != null ? value$.toString() : null;
-        break;
-      case 3:
-        customerId = value$ != null ? value$.toString() : null;
-        break;
-      case 4:
-        bookingId = value$ != null ? value$.toString() : null;
-        break;
-      case 5:
-        movieId = value$ != null ? value$.toString() : null;
-        break;
-      case 6:
-        showId = value$ != null ? value$.toString() : null;
-        break;
-      case 7:
-        cinemaId = value$ != null ? value$.toString() : null;
-        break;
-      case 8:
-        cinemaHallId = value$ != null ? value$.toString() : null;
-        break;
-      case 9:
-        price = (java.math.BigDecimal) value$;
-        break;
-      case 10:
-        quantity = (java.math.BigDecimal) value$;
-        break;
-      case 11:
-        createdAt = (java.time.Instant) value$;
-        break;
-      case 12:
-        paymentStatus = (com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentStatus) value$;
-        break;
-      case 13:
-        failureMessages = (java.util.List<java.lang.String>) value$;
-        break;
-      default:
-        throw new IndexOutOfBoundsException("Invalid index: " + field$);
+    case 0: id = value$ != null ? value$.toString() : null; break;
+    case 1: sagaId = value$ != null ? value$.toString() : null; break;
+    case 2: paymentId = value$ != null ? value$.toString() : null; break;
+    case 3: customerId = value$ != null ? value$.toString() : null; break;
+    case 4: bookingId = value$ != null ? value$.toString() : null; break;
+    case 5: movieId = value$ != null ? value$.toString() : null; break;
+    case 6: showId = value$ != null ? value$.toString() : null; break;
+    case 7: cinemaId = value$ != null ? value$.toString() : null; break;
+    case 8: cinemaHallId = value$ != null ? value$.toString() : null; break;
+    case 9: price = (java.math.BigDecimal)value$; break;
+    case 10: quantity = (java.math.BigDecimal)value$; break;
+    case 11: createdAt = (java.time.Instant)value$; break;
+    case 12: paymentStatus = (com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentStatus)value$; break;
+    case 13: failureMessages = (java.util.List<java.lang.String>)value$; break;
+    default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
@@ -405,7 +366,6 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
 
   /**
    * Sets the value of the 'price' field.
-   *
    * @param value the value to set.
    */
   public void setPrice(java.math.BigDecimal value) {
@@ -414,7 +374,6 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
 
   /**
    * Gets the value of the 'quantity' field.
-   *
    * @return The value of the 'quantity' field.
    */
   public java.math.BigDecimal getQuantity() {
@@ -424,7 +383,6 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
 
   /**
    * Sets the value of the 'quantity' field.
-   *
    * @param value the value to set.
    */
   public void setQuantity(java.math.BigDecimal value) {
@@ -433,7 +391,6 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
 
   /**
    * Gets the value of the 'createdAt' field.
-   *
    * @return The value of the 'createdAt' field.
    */
   public java.time.Instant getCreatedAt() {
@@ -1063,10 +1020,9 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
 
 
     /**
-     * Clears the value of the 'price' field.
-     *
-     * @return This builder.
-     */
+      * Clears the value of the 'price' field.
+      * @return This builder.
+      */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentResponseAvroModel.Builder clearPrice() {
       price = null;
       fieldSetFlags()[9] = false;
@@ -1074,21 +1030,19 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
     }
 
     /**
-     * Gets the value of the 'quantity' field.
-     *
-     * @return The value.
-     */
+      * Gets the value of the 'quantity' field.
+      * @return The value.
+      */
     public java.math.BigDecimal getQuantity() {
       return quantity;
     }
 
 
     /**
-     * Sets the value of the 'quantity' field.
-     *
-     * @param value The value of 'quantity'.
-     * @return This builder.
-     */
+      * Sets the value of the 'quantity' field.
+      * @param value The value of 'quantity'.
+      * @return This builder.
+      */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentResponseAvroModel.Builder setQuantity(java.math.BigDecimal value) {
       validate(fields()[10], value);
       this.quantity = value;
@@ -1097,20 +1051,18 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
     }
 
     /**
-     * Checks whether the 'quantity' field has been set.
-     *
-     * @return True if the 'quantity' field has been set, false otherwise.
-     */
+      * Checks whether the 'quantity' field has been set.
+      * @return True if the 'quantity' field has been set, false otherwise.
+      */
     public boolean hasQuantity() {
       return fieldSetFlags()[10];
     }
 
 
     /**
-     * Clears the value of the 'quantity' field.
-     *
-     * @return This builder.
-     */
+      * Clears the value of the 'quantity' field.
+      * @return This builder.
+      */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentResponseAvroModel.Builder clearQuantity() {
       quantity = null;
       fieldSetFlags()[10] = false;
@@ -1118,10 +1070,9 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
     }
 
     /**
-     * Gets the value of the 'createdAt' field.
-     *
-     * @return The value.
-     */
+      * Gets the value of the 'createdAt' field.
+      * @return The value.
+      */
     public java.time.Instant getCreatedAt() {
       return createdAt;
     }
@@ -1131,7 +1082,7 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
       * Sets the value of the 'createdAt' field.
       * @param value The value of 'createdAt'.
       * @return This builder.
-     */
+      */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentResponseAvroModel.Builder setCreatedAt(java.time.Instant value) {
       validate(fields()[11], value);
       this.createdAt = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
@@ -1150,7 +1101,7 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
 
     /**
       * Clears the value of the 'createdAt' field.
-     * @return This builder.
+      * @return This builder.
       */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentResponseAvroModel.Builder clearCreatedAt() {
       fieldSetFlags()[11] = false;
@@ -1189,8 +1140,8 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
 
     /**
       * Clears the value of the 'paymentStatus' field.
-     * @return This builder.
-     */
+      * @return This builder.
+      */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentResponseAvroModel.Builder clearPaymentStatus() {
       paymentStatus = null;
       fieldSetFlags()[12] = false;
@@ -1210,7 +1161,7 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
       * Sets the value of the 'failureMessages' field.
       * @param value The value of 'failureMessages'.
       * @return This builder.
-     */
+      */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentResponseAvroModel.Builder setFailureMessages(java.util.List<java.lang.String> value) {
       validate(fields()[13], value);
       this.failureMessages = value;
@@ -1229,8 +1180,8 @@ public class PaymentResponseAvroModel extends org.apache.avro.specific.SpecificR
 
     /**
       * Clears the value of the 'failureMessages' field.
-     * @return This builder.
-     */
+      * @return This builder.
+      */
     public com.onboard.cinema.book.show.kafka.booking.avro.model.PaymentResponseAvroModel.Builder clearFailureMessages() {
       failureMessages = null;
       fieldSetFlags()[13] = false;

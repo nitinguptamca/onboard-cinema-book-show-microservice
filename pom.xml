@@ -20,11 +20,9 @@
         <module>onboard-cinema-book-show-admin-server</module>
         <module>onboard-cinema-book-show-api-gateway</module>
         <module>onboard-cinema-book-show-customer-service</module>
-        <module>onboard-cinema-book-show-payment-service</module>
         <module>onboard-cinema-book-show-cinema-mgmt-service</module>
         <module>common-module</module>
         <module>infrastructure</module>
-        <module>onboard-cinema-book-show-ticket-booking-service</module>
     </modules>
 
     <properties>
